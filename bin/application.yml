@@ -1,0 +1,23 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: VRINITY-turbine-server
+      
+#Config Server      
+  cloud:
+    config:
+      uri: http://localhost:8888 
+      name: VRINITY-config-server
+
+#Eureka Client   
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9091/eureka/
+      
+#Turbine Server 
+turbine:     
+  appConfig: VRINITY-login
+  clusterNameExpression: new String("default")
